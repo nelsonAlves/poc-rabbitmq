@@ -25,12 +25,14 @@ public class ProducerRabbitConfiguration {
 	
 	// aqui serão instanciados a exchange, o routing-key e a deadletter
 	
-	@Value("${spring.rabbitmq.request.routing-key.producer}")
-	private String queue;
-	@Value("${spring.rabbitmq.request.exchange.producer}")
-	private String exchange;
-	@Value("${spring.rabbitmq.request.deadletter.producer}")
-	private String deadletter;
+    @Value("${spring.rabbitmq.request.routing-key.producer}")
+    private String queue;
+
+    @Value("${spring.rabbitmq.request.exchenge.producer}")
+    private String exchange;
+
+    @Value("${spring.rabbitmq.request.dead-letter.producer}")
+    private String deadLetter;
 
 	@Bean
 	DirectExchange exchange() {
@@ -39,9 +41,9 @@ public class ProducerRabbitConfiguration {
 	}
 	
 	@Bean
-	Queue deadletter() {
+	Queue deadLetter() {
 		 
-		return new Queue(deadletter);
+		return new Queue(deadLetter);
 	}
 	
 	@Bean
@@ -55,7 +57,7 @@ public class ProducerRabbitConfiguration {
 		Map<String, Object> args = new HashMap<>();
 		
 		args.put("x-dead-letter-exchange", exchange);
-		args.put("x-dead-letter-routing-key", deadletter);
+		args.put("x-dead-letter-routing-key", deadLetter);
 		
 		return new Queue(queue, true, false, false, args);
 	}
@@ -71,14 +73,9 @@ public class ProducerRabbitConfiguration {
 	@Bean
 	public Binding bindingDeadletter() {
 		
-		return BindingBuilder.bind(deadletter())
+		return BindingBuilder.bind(deadLetter())
 				.to(exchange())
-				.with(deadletter);
+				.with(deadLetter);
 	}
-	
-	
-	
-	
-	
 	
 }

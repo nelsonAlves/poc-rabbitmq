@@ -17,6 +17,8 @@
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+<!-- 	A escolha do spring-boot-starter-amqp e não o protocolo do rabbitmq implica em deixar nossa aplicação -->
+<!-- 	desacoplada de brokers, assim podemos trocar nosso broker sem maiores danos a aplicação -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
