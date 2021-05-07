@@ -14,7 +14,7 @@ import org.springframework.amqp.core.Queue;
 
 /**
  * 
- * @author negao
+ * @author nelson.oliveira
  *
  *Implementação do que foi configurado no application.yml
  *Com essa imlemantação também ao iniciar a aplicação as queues serão criadas no rabbitmq

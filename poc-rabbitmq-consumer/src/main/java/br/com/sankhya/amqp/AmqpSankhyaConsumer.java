@@ -2,7 +2,7 @@ package br.com.sankhya.amqp;
 
 /**
  * 
- * @author negao
+ * @author nelson.oliveira
  *
  * @param <T>
  * Interface genérica para consumir as mensagens

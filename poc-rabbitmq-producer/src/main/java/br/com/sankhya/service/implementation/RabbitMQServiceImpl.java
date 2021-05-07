@@ -9,7 +9,7 @@ import br.com.sankhya.service.AmqpSankhyaService;
 
 /**
  * 
- * @author negao
+ * @author nelson.oliveira
  *
  *Service criado para que trabalhe como um serviço e fique ainda mais desacoplado 
  *para não trabalhar diretamente com o nosso amqp qual seja a interface 

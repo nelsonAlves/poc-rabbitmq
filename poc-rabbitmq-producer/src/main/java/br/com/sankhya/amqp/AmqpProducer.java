@@ -2,7 +2,7 @@ package br.com.sankhya.amqp;
 
 /**
  * 
- * @author negao
+ * @author nelson.oliveira
  *
  *Inteface responsável por produzir mensagens em qualquer broker Amqp
  *desta forma todo mundo que utilizar amqp tera que utiliza-la indiferente do broker

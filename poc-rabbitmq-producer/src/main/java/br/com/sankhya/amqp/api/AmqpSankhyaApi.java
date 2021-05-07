@@ -12,7 +12,7 @@ import br.com.sankhya.service.AmqpSankhyaService;
 
 /**
  * 
- * @author negao
+ * @author nelson.oliveira
  *
  *Criado um endpoint rest só para facilitar 
  *os testes e o envio dessas mensagens e 

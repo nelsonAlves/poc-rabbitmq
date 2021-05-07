@@ -11,7 +11,7 @@ import br.com.sankhya.dto.Message;
 
 /**
  * 
- * @author negao
+ * @author nelson.oliveira
  *
  *Componente que implementará o amqp indiferente do broker
  *

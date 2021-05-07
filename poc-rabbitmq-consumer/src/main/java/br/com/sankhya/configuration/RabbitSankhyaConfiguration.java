@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 
- * @author negao
+ * @author nelson.oliveira
  *
  *Classe criada para conversão das mensagens enviadas pelo producer
  */
