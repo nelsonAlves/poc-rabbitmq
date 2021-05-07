@@ -9,9 +9,10 @@ import br.com.sankhya.service.ConsumerSankhyaService;
 public class ConsumerSankhyaServiceImpl implements ConsumerSankhyaService {
 
 	@Override
-	public void action(Message message) {
+	public void action(Message message) throws Exception {
 
-		System.out.println(message.getText());
+		throw new Exception("Error!");
+		//System.out.println(message.getText());
 	}
 
 }

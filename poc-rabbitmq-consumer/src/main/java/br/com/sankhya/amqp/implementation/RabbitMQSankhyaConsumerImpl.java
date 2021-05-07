@@ -1,5 +1,6 @@
 package br.com.sankhya.amqp.implementation;
 
+import org.springframework.amqp.AmqpRejectAndDontRequeueException;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,8 +18,19 @@ public class RabbitMQSankhyaConsumerImpl implements AmqpSankhyaConsumer<Message>
 	@Override
 	@RabbitListener(queues = "${spring.rabbitmq.request.routing-key.producer}") //Aqui é passada a fila que o meu listener vai escutar.
 	public void consumer(Message message) {
+		
+		try {
+			
+			service.action(message);
+		} catch (Exception e) {
 
-		service.action(message);
+			/*
+			 * essa exception em especial sabe que se houver um erro 
+			 * deve ser lançada na deadletter
+			 */
+			throw new AmqpRejectAndDontRequeueException(e);
+		}
+
 	}
 
 }
