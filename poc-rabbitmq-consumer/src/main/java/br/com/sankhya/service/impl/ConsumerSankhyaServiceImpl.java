@@ -11,8 +11,8 @@ public class ConsumerSankhyaServiceImpl implements ConsumerSankhyaService {
 	@Override
 	public void action(Message message) throws Exception {
 
-		throw new Exception("Error!");
-		//System.out.println(message.getText());
+		//throw new Exception("Error!"); //simulando erro para deadLetter
+		System.out.println(message.getText());
 	}
 
 }
